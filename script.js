@@ -5,13 +5,17 @@ function alignLastRow() {
   let firstElemInRow = items[0].getBoundingClientRect();
   let lastElemInRow;
   let itemCoords;
+  let margin;
 
   for (let i = 1; i < items.length; i++) {
     itemCoords = items[i].getBoundingClientRect();
     if(itemCoords.top !== firstElemInRow.top){
       lastElemInRow = items[i-1];
       let lastElemInRowCoords = lastElemInRow.getBoundingClientRect();
-      let margin = document.body.clientWidth - (lastElemInRowCoords.right + 20 - firstElemInRow.left);
+      margin = document.body.clientWidth - (lastElemInRowCoords.right + 20 - firstElemInRow.left);
+      if (margin > 120) {
+        margin = 0;
+      }
       container[0].style.marginLeft = margin/2 + 'px';
       return;
     }
