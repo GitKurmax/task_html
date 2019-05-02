@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    margin: 20px;
+}
+
+article {
+    width: 100px;
+    height: 200px;
+    background: grey;
+    
+}
+
+article:not(:nth-last-of-type(1)) {
+    margin-right: 20px;
+}
